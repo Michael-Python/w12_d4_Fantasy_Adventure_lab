@@ -51,14 +51,14 @@ public class BarbarianTest {
     @Test
     public void canHeal() {
         conan.takeDamage(10);
-        conan.heal(5);
+        conan.addHealth(5);
         assertEquals(95, conan.getHealthPoints());
     }
 
     @Test
     public void noOverHealing() {
         conan.takeDamage(10);
-        conan.heal(15);
+        conan.addHealth(15);
         assertEquals(100, conan.getHealthPoints());
     }
 
@@ -66,7 +66,7 @@ public class BarbarianTest {
     public void canUseWeapon(){
         conan.changeWeapons(weapons);
         conan.attack(conan.getEquippedWeapon(), orc);
-        assertEquals(40, orc.getHealthPoints());
+        assertEquals(90, orc.getHealthPoints());
     }
 
 }

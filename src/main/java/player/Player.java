@@ -51,7 +51,7 @@ public abstract class Player {
         return maxHealthPoints;
     }
 
-    public void heal(int pointsToHeal) {
+    public void addHealth(int pointsToHeal) {
         if ((healthPoints + pointsToHeal) > getMaxHealthPoints()) {
             healthPoints = getMaxHealthPoints();
         }

@@ -15,13 +15,13 @@ public class EnemyTest {
 
     @Before
     public void before() {
-        orc = new Enemy("Orcy", 5, 15);
+        orc = new Enemy("Orky", 5, 15);
         conan = new Barbarians("Conan", 25);
     }
 
     @Test
     public void canGetName() {
-        assertEquals("Orcy", orc.getName());
+        assertEquals("Orky", orc.getName());
     }
 
     @Test

@@ -28,7 +28,7 @@ public class Enemy {
 
     public void takeDamage(int damageAmount) {
         if (getHealthPoints() > damageAmount) {
-            this.healthPoints -= damage;
+            this.healthPoints -= damageAmount;
         } else {
             this.healthPoints = 0;
         }

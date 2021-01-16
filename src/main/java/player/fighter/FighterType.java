@@ -21,12 +21,17 @@ public abstract class FighterType extends player.Player {
 
     public void changeWeapons( Weapons newWeapons) {
         if (equippedWeapon != null){
-            addToInventory(equippedWeapon);
+            unEquipWeapon();
         }
         if (getInventory().contains(newWeapons)){
-            removeFromInventory(newWeapons);
             equippedWeapon = newWeapons;
+            removeFromInventory(newWeapons);
         }
+    }
+
+    private void unEquipWeapon() {
+        addToInventory(equippedWeapon);
+        equippedWeapon = null;
     }
 
 

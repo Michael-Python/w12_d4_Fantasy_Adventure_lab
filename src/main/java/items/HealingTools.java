@@ -2,14 +2,14 @@ package items;
 
 public class HealingTools extends ItemType {
 
-    private int healthPoints;
+    private int pointsToHeal;
 
-    public HealingTools(String name, int healthPoints){
+    public HealingTools(String name, int pointsToHeal){
         super(name);
-        this.healthPoints = healthPoints;
+        this.pointsToHeal = pointsToHeal;
     }
 
-    public int getHealthPoints() {
-        return healthPoints;
+    public int getHealingPoints() {
+        return pointsToHeal;
     }
 }

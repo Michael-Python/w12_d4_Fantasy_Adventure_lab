@@ -2,6 +2,7 @@ package player.healer;
 
 import items.HealingTools;
 import player.fighter.FighterType;
+import player.magicUser.MagicUserType;
 
 public abstract class HealerType extends player.Player {
 
@@ -17,18 +18,21 @@ public abstract class HealerType extends player.Player {
         return equippedHealingTools;
     }
 
-    public void heal(HealingTools healingTools, FighterType fighterType){
-        fighterType.heal(healingTools.getHealthPoints());
+    public void heal(HealingTools healingTools, HealerType healerType){
+        if(healingTools != null) {
+            healerType.addHealth(healingTools.getHealingPoints());
+        }
     }
+
 
     public void changeHealing(HealingTools newHealingTools) {
         if (equippedHealingTools != null) {
             addToInventory(equippedHealingTools);
+        }
 
-            if (getInventory().contains(newHealingTools)) {
-                removeFromInventory(newHealingTools);
-                equippedHealingTools = newHealingTools;
-            }
+        if (getInventory().contains(newHealingTools)) {
+            removeFromInventory(newHealingTools);
+            equippedHealingTools = newHealingTools;
         }
     }
 }

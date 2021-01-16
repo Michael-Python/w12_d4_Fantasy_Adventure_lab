@@ -34,6 +34,9 @@ public class WarlocksTest {
 
     @Test
     public void canCastSpell() {
+        // add a spell to the inventory
+        voldy.addToInventory(this.leviosa);
+        // equip that weapon
         voldy.changeSpells(leviosa);
         voldy.castSpell(voldy.getEquippedSpell(), orc);
         assertEquals(90, orc.getHealthPoints());
