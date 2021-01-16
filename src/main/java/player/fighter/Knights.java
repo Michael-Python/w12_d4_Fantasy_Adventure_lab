@@ -1,8 +1,8 @@
 package player.fighter;
 
 public class Knights extends FighterType {
-    public Knights(String name, int healthPoints) {
-        super(name, healthPoints);
+    public Knights(String name, int healthPoints, int defence) {
+        super(name, healthPoints, defence);
     }
 
 }

@@ -11,7 +11,7 @@ public class KnightTest {
     Knights sirGalahad;
 
     @Before
-    public void before() {sirGalahad = new Knights("Sir Galahad", 150); }
+    public void before() {sirGalahad = new Knights("Sir Galahad", 150,0); }
 
     @Test
     public void hasName(){

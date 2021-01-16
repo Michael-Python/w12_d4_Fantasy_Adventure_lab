@@ -7,15 +7,25 @@ public abstract class FighterType extends player.Player {
 
     private Weapons equippedWeapon;
 
-    public FighterType(String name, int healthPoints) {
-        super(name, healthPoints);
+    public FighterType(String name, int healthPoints, int defence) {
+        super(name, healthPoints, defence);
         this.equippedWeapon = null;
     }
 
-    public Weapons getEquippedWeapon(){ return equippedWeapon ; }
+    public Weapons getEquippedWeapon(){
+        if(equippedWeapon == null) {
+            return null;
+        }
+        return equippedWeapon ;
+    }
 
     public void attack(Weapons weapons, Enemy enemy) {
-        enemy.takeDamage(weapons.getDamage());
+        if(equippedWeapon == null) {
+            return;
+        }
+        if(equippedWeapon != null) {
+            enemy.takeDamage(weapons.getDamage());
+        }
 
     }
 

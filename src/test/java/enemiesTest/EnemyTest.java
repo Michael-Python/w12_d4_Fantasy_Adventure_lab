@@ -16,7 +16,7 @@ public class EnemyTest {
     @Before
     public void before() {
         orc = new Enemy("Orky", 5, 15);
-        conan = new Barbarians("Conan", 25);
+        conan = new Barbarians("Conan", 25, 0);
     }
 
     @Test

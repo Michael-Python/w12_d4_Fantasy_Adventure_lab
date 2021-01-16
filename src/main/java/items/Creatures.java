@@ -2,7 +2,7 @@ package items;
 
 public class Creatures extends ItemType{
 
-    private int defence;
+    public int defence;
 
     public Creatures(String name, int defence){
         super(name);

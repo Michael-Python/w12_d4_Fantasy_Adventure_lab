@@ -1,6 +1,7 @@
 package playersTest.magicUsersTest;
 
 import enemies.Enemy;
+import items.Creatures;
 import items.Spells;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,12 +15,14 @@ public class WarlocksTest {
     Warlocks voldy;
     Enemy orc;
     Spells leviosa;
+    Creatures iglu;
 
     @Before
     public void before() {
-        voldy = new Warlocks("Voldemort", 3000);
+        voldy = new Warlocks("Voldemort", 3000, 0);
         orc = new Enemy("Orky", 50, 100);
         leviosa = new Spells("Leviosa", 10);
+        iglu = new Creatures("Iglu", 80);
     }
 
     @Test
@@ -41,4 +44,11 @@ public class WarlocksTest {
         voldy.castSpell(voldy.getEquippedSpell(), orc);
         assertEquals(90, orc.getHealthPoints());
     }
+
+//    @Test void canAddCreature(){
+//        voldy.addToInventory(this.iglu);
+//        voldy.changeCreature(iglu);
+//        voldy.useCreatureDefense(voldy.getEquippedCreature(), voldy);
+//
+//    }
 }

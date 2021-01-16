@@ -18,10 +18,10 @@ public class ClericsTest {
 
         @Before
         public void before() {
-                healer = new Clerics("Priest", 80);
+                healer = new Clerics("Priest", 80, 0);
                 heal20 = new HealingTools("Heal20", 20);
-                conan = new Barbarians("Conan", 70);
-                voldy = new Warlocks("Voldemort", 3000);
+                conan = new Barbarians("Conan", 70,0);
+                voldy = new Warlocks("Voldemort", 3000, 0);
 
 
         }

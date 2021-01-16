@@ -16,7 +16,7 @@ public class BarbarianTest {
 
     @Before
     public void before(){
-        conan = new Barbarians("Conan", 100);
+        conan = new Barbarians("Conan", 100, 0);
         orc = new Enemy("Orky", 50, 100);
         weapons = new Weapons("Sword", 10);
     }
@@ -64,6 +64,9 @@ public class BarbarianTest {
 
     @Test
     public void canUseWeapon(){
+        // add a weapon to the invetory
+        conan.addToInventory(this.weapons);
+        // equip that weapon
         conan.changeWeapons(weapons);
         conan.attack(conan.getEquippedWeapon(), orc);
         assertEquals(90, orc.getHealthPoints());

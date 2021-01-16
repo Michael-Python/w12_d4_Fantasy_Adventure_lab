@@ -13,7 +13,7 @@ public class DwarfTest {
     Dwarves thorin;
 
     @Before
-    public void before(){ thorin = new Dwarves("Thorin", 200);
+    public void before(){ thorin = new Dwarves("Thorin", 200, 0);
     }
 
     @Test

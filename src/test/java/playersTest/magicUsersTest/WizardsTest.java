@@ -11,7 +11,7 @@ public class WizardsTest {
     Wizards merlin;
 
     @Before
-    public void before(){ merlin = new Wizards("Merlin", 85); }
+    public void before(){ merlin = new Wizards("Merlin", 85, 0); }
 
     @Test
     public void canGetName(){

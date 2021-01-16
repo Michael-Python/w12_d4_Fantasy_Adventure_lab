@@ -10,13 +10,16 @@ public abstract class Player {
     private final int maxHealthPoints;
     private int healthPoints;
     private ArrayList<ItemType> inventory;
+    private int defence;
 
-    public Player(String name, int healthPoints) {
+    public Player(String name, int healthPoints, int defence) {
         this.name = name;
         this.maxHealthPoints = healthPoints;
         this.healthPoints = healthPoints;
         this.inventory = new ArrayList<ItemType>();
+        this.defence = defence;
     }
+
 
     public String getName() {
         return name;
