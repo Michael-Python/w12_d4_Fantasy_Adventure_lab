@@ -23,8 +23,8 @@ public abstract class MagicUserType extends player.Player {
         return equippedCreature;
     }
 
-    public void castSpell(Spells spell, Enemy enemy) {
-        enemy.takeDamage(spell.getDamage());
+    public void castSpell(Spells spells, Enemy enemy) {
+        enemy.takeDamage(spells.getDamage());
     }
 
     public void changeSpells(Spells newSpell) {

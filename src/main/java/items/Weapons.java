@@ -19,10 +19,5 @@ public class Weapons extends ItemType {
         return damage;
     }
 
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
-//
-//    public void setName
 
 }

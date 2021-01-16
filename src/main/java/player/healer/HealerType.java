@@ -1,7 +1,7 @@
 package player.healer;
 
 import items.HealingTools;
-import items.Weapons;
+import player.fighter.FighterType;
 
 public abstract class HealerType extends player.Player {
 
@@ -12,32 +12,22 @@ public abstract class HealerType extends player.Player {
         this.equippedHealingTools = null;
     }
 
-    @Override
-    public String getName() {
-        return super.getName();
+
+    public HealingTools getEquippedHealingTools(){
+        return equippedHealingTools;
     }
 
-    @Override
-    public int getHealthPoints() {
-        return super.getHealthPoints();
+    public void heal(HealingTools healingTools, FighterType fighterType){
+        fighterType.heal(healingTools.getHealthPoints());
     }
 
-    public void setEquippedHealingTools(HealingTools equippedHealingTools) {
-        this.equippedHealingTools = equippedHealingTools;
-    }
-
-    @Override
-    public void heal(int pointsToHeal) {
-        super.heal(pointsToHeal);
-    }
-
-    public void changeHealing(HealingTools equippedHealingTools) {
+    public void changeHealing(HealingTools newHealingTools) {
         if (equippedHealingTools != null) {
             addToInventory(equippedHealingTools);
 
-            if (getInventory().contains(hea)) {
-                removeFromInventory(newHealingTool);
-                equippedHealingTools = newHealingTool;
+            if (getInventory().contains(newHealingTools)) {
+                removeFromInventory(newHealingTools);
+                equippedHealingTools = newHealingTools;
             }
         }
     }

@@ -1,5 +1,7 @@
 package playersTest.fightersTest;
 
+import enemies.Enemy;
+import items.Weapons;
 import player.fighter.Barbarians;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,10 +11,14 @@ import static org.junit.Assert.assertEquals;
 public class BarbarianTest {
 
     Barbarians conan;
+    Weapons weapons;
+    Enemy orc;
 
     @Before
     public void before(){
         conan = new Barbarians("Conan", 100);
+        orc = new Enemy("Orky", 50, 100);
+        weapons = new Weapons("Sword", 10);
     }
 
     @Test
@@ -55,4 +61,12 @@ public class BarbarianTest {
         conan.heal(15);
         assertEquals(100, conan.getHealthPoints());
     }
+
+    @Test
+    public void canUseWeapon(){
+        conan.changeWeapons(weapons);
+        conan.attack(conan.getEquippedWeapon(), orc);
+        assertEquals(40, orc.getHealthPoints());
+    }
+
 }

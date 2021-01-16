@@ -13,23 +13,18 @@ public class WeaponsTest {
 
     @Before
     public void before(){
-        weapons = new Weapons("Sword", 60);
+        weapons = new Weapons("Sword", 10);
     }
 
     @Test
-    public void canWeaponName(){
+    public void canGetWeaponName(){
         assertEquals("Sword", weapons.getName());
     }
 
     @Test
     public void canGetWeaponDamage(){
-        assertEquals(60, weapons.getDamage());
+        assertEquals(10, weapons.getDamage());
     }
-//
-//    @Test
-//    public void canChangeWeaponName(){
-//        weapons = new Weapons("Axe");
-//        assertEquals("Axe", weapons.setName());
-//    }
+
 
 }

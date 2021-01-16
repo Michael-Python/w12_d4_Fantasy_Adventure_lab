@@ -12,8 +12,11 @@ public class HealingToolsTest {
 
     @Before
     public void before(){
-        healingTools = new HealingTools("test", 20);
+        healingTools = new HealingTools("heal20", 20);
     }
+
+    @Test
+    public void canHaveName(){assertEquals("heal20",healingTools.getName());}
 
     @Test
     public void canHaveHealthPoints(){

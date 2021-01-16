@@ -14,7 +14,8 @@ public abstract class FighterType extends player.Player {
 
     public Weapons getEquippedWeapon(){ return equippedWeapon ; }
 
-    public void attack(Weapons weapons, Enemy enemy) { enemy.takeDamage(weapons.getDamage());
+    public void attack(Weapons weapons, Enemy enemy) {
+        enemy.takeDamage(weapons.getDamage());
 
     }
 
