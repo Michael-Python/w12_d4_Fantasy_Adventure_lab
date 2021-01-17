@@ -8,8 +8,8 @@ public abstract class HealerType extends player.Player {
 
     private HealingTools equippedHealingTools;
 
-    public HealerType(String name, int healthPoints, int defence) {
-        super(name, healthPoints, defence);
+    public HealerType(String name, int healthPoints, int defencePoints) {
+        super(name, healthPoints, defencePoints);
         this.equippedHealingTools = null;
     }
 

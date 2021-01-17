@@ -36,6 +36,11 @@ public class WarlocksTest {
     }
 
     @Test
+    public void canGetDefencePoints(){
+        assertEquals(0, voldy.getDefence());
+    }
+
+    @Test
     public void canCastSpell() {
         // add a spell to the inventory
         voldy.addToInventory(this.leviosa);

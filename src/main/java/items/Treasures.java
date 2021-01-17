@@ -2,14 +2,14 @@ package items;
 
 public class Treasures extends ItemType {
 
-    private int defence;
+    private int defencePoints;
 
-    public Treasures(String name, int defence){
+    public Treasures(String name, int defencePoints){
         super(name);
-        this.defence = defence;
+        this.defencePoints = defencePoints;
     }
 
     public int getDefence() {
-        return defence;
+        return defencePoints;
     }
 }

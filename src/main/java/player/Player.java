@@ -8,6 +8,7 @@ public abstract class Player {
 
     private final String name;
     private final int maxHealthPoints;
+
     private int healthPoints;
     private ArrayList<ItemType> inventory;
     private int defence;
@@ -29,6 +30,10 @@ public abstract class Player {
         return healthPoints;
     }
 
+    public int getDefence(){
+        return defence;
+    }
+
     public ArrayList<ItemType> getInventory() {
         return inventory;
     }
@@ -43,11 +48,24 @@ public abstract class Player {
     }
 
     public void takeDamage(int damageAmount) {
-        if (getHealthPoints() > damageAmount) {
-            this.healthPoints -= damageAmount;
-        } else {
-            this.healthPoints = 0;
+        if (getDefence() > damageAmount) {
+            this.defence -= damageAmount;
         }
+        else if (getDefence() == 0){
+            if (getHealthPoints() > damageAmount) {
+                this.healthPoints -= damageAmount;
+            } else {
+                this.healthPoints = 0;
+            }
+        } else {
+            damageAmount -= getDefence();
+            if (getHealthPoints() > damageAmount) {
+                this.healthPoints -= damageAmount;
+            } else {
+                this.healthPoints = 0;
+            }
+        }
+
     }
 
     public int getMaxHealthPoints() {
@@ -55,6 +73,7 @@ public abstract class Player {
     }
 
     public void addHealth(int pointsToHeal) {
+
         if ((healthPoints + pointsToHeal) > getMaxHealthPoints()) {
             healthPoints = getMaxHealthPoints();
         }

@@ -16,7 +16,7 @@ public class BarbarianTest {
 
     @Before
     public void before(){
-        conan = new Barbarians("Conan", 100, 0);
+        conan = new Barbarians("Conan", 100, 80);
         orc = new Enemy("Orky", 50, 100);
         weapons = new Weapons("Sword", 10);
     }
@@ -38,19 +38,24 @@ public class BarbarianTest {
 
     @Test
     public void canTakeDamage() {
-        conan.takeDamage(20);
+        conan.takeDamage(100);
         assertEquals(80, conan.getHealthPoints());
     }
 
     @Test
+    public void canGetDefencePoints(){
+        assertEquals(80, conan.getDefence());
+    }
+
+    @Test
     public void noNegativeHealth() {
-        conan.takeDamage(110);
+        conan.takeDamage(200);
         assertEquals(0, conan.getHealthPoints());
     }
 
     @Test
     public void canHeal() {
-        conan.takeDamage(10);
+        conan.takeDamage(90);
         conan.addHealth(5);
         assertEquals(95, conan.getHealthPoints());
     }
