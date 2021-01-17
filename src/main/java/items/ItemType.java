@@ -8,9 +8,6 @@ public abstract class ItemType {
         this.name = name;
     }
 
-    protected ItemType() {
-    }
-
     public String getName() {
         return name;
     }

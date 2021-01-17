@@ -81,4 +81,7 @@ public abstract class Player {
             healthPoints += pointsToHeal;
         }
     }
+
+    public void addDefence(int defenceToAdd){
+        defence += defenceToAdd;    }
 }

@@ -6,6 +6,7 @@ import items.Spells;
 
 public abstract class MagicUserType extends player.Player {
 
+    private int defence;
     private Spells equippedSpell;
     private Creatures equippedCreature;
 
@@ -13,6 +14,7 @@ public abstract class MagicUserType extends player.Player {
         super(name, healthPoints, defence);
         this.equippedSpell = null;
         this.equippedCreature = null;
+        this.defence = defence;
     }
 
     public Spells getEquippedSpell() {
@@ -20,6 +22,9 @@ public abstract class MagicUserType extends player.Player {
     }
 
     public Creatures getEquippedCreature() {
+        if(equippedCreature == null){
+            return null;
+        }
         return equippedCreature;
     }
 
@@ -27,9 +32,15 @@ public abstract class MagicUserType extends player.Player {
         enemy.takeDamage(spells.getDamage());
     }
 
-//    public void useCreatureDefense(Creatures newCreature, Warlocks voldy){
-//        voldy.defence = newCreature.defence;
-//    }
+    public void useCreatureDefense(Creatures newCreature, MagicUserType magicUserType){
+        if(equippedCreature == null) {
+            return;
+        }
+        if(equippedCreature != null) {
+            magicUserType.addDefence(newCreature.getDefence());
+        }
+
+    }
 
     public void changeSpells(Spells newSpell) {
         if (equippedSpell != null) {

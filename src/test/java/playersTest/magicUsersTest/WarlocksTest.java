@@ -19,7 +19,7 @@ public class WarlocksTest {
 
     @Before
     public void before() {
-        voldy = new Warlocks("Voldemort", 3000, 0);
+        voldy = new Warlocks("Voldemort", 3000, 10);
         orc = new Enemy("Orky", 50, 100);
         leviosa = new Spells("Leviosa", 10);
         iglu = new Creatures("Iglu", 80);
@@ -37,7 +37,7 @@ public class WarlocksTest {
 
     @Test
     public void canGetDefencePoints(){
-        assertEquals(0, voldy.getDefence());
+        assertEquals(10, voldy.getDefence());
     }
 
     @Test
@@ -50,10 +50,19 @@ public class WarlocksTest {
         assertEquals(90, orc.getHealthPoints());
     }
 
-//    @Test void canAddCreature(){
+    @Test
+    public void canUseCreature(){
+        voldy.addToInventory(this.iglu);
+        voldy.changeCreature(iglu);
+        voldy.useCreatureDefense(voldy.getEquippedCreature(), voldy);
+        assertEquals(90, voldy.getDefence());
+    }
+
+//    @Test
+//    public void canAddCreature(){
 //        voldy.addToInventory(this.iglu);
 //        voldy.changeCreature(iglu);
 //        voldy.useCreatureDefense(voldy.getEquippedCreature(), voldy);
-//
+//        assertEquals(80, voldy.getDefence());
 //    }
 }
